@@ -33,3 +33,8 @@ li {
   text-align: center;
   padding-top: 1rem;
 }
+
+.container {
+  background-color: var(--clr-blue);
+  min-height: 100vh;
+}

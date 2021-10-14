@@ -33,14 +33,9 @@ const placeholderMeetings = [
   },
 ];
 
-const containerStyle = {
-  backgroundColor: "var(--clr-blue)",
-  minHeight: "100vh",
-};
-
 const MeetingsPage = () => {
   return (
-    <div style={containerStyle}>
+    <div className="container">
       <h1 className="pageHeading">Upcoming Meetings</h1>
       <MeetingList meetings={placeholderMeetings} />
     </div>
