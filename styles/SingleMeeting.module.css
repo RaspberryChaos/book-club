@@ -1,0 +1,17 @@
+.container {
+  background-color: var(--clr-light);
+  border: 5px solid #354a53;
+  margin: 1rem;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  height: 350px;
+  border-radius: 1rem;
+  box-shadow: 4px 4px 5px 0px rgba(0, 0, 0, 0.5);
+}
+
+.container * {
+  padding: 0.5rem;
+}

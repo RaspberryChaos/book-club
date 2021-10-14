@@ -1,8 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Montserrat&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Montserrat&display=swap");
 
 :root {
   --clr-blue: #166a85;
-  --clr-light: #CDE8E2;
+  --clr-light: #cde8e2;
 }
 
 * {
@@ -18,4 +18,18 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+.pageHeading {
+  font-size: 2.8rem;
+  padding-bottom: 2rem;
+  font-family: "Caveat", cursive;
+  text-shadow: 2px 3px 2px rgba(0, 0, 0, 0.2);
+  color: var(--clr-light);
+  text-align: center;
+  padding-top: 1rem;
 }

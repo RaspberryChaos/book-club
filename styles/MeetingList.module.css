@@ -1,0 +1,21 @@
+.grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/*MEDIA QUERIES*/
+
+@media (min-width: 500px) {
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 768px) {
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
