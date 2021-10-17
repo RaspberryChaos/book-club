@@ -1,9 +1,10 @@
 import Link from "next/link";
+import styles from "./Navbar.module.css";
 
 const Navbar = () => {
   return (
-    <header>
-      <div>Book club</div>
+    <header className={styles.header}>
+      <Link href="/"><span className={styles.logo}>Book club</span></Link>
       <nav>
         <ul>
           <li>

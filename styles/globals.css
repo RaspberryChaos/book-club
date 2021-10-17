@@ -3,6 +3,9 @@
 :root {
   --clr-blue: #166a85;
   --clr-light: #cde8e2;
+  --clr-navbar: #354A53;
+
+  --font-headings: "Caveat", cursive;
 }
 
 * {
@@ -27,7 +30,7 @@ li {
 .pageHeading {
   font-size: 2.8rem;
   padding-bottom: 2rem;
-  font-family: "Caveat", cursive;
+  font-family: var(--font-headings);
   text-shadow: 2px 3px 2px rgba(0, 0, 0, 0.2);
   color: var(--clr-light);
   text-align: center;
