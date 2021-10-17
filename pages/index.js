@@ -20,7 +20,9 @@ export default function Home() {
         <Link href="/meetings" passHref>
           <button className={styles.btn}>Upcoming Meetings</button>
           </Link>
+          <Link href="/new-meeting" passHref>
           <button className={styles.btn}>Add New Meeting</button>
+          </Link>
         </div>
       </div>
     </div>

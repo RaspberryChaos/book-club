@@ -1,4 +1,5 @@
 import { useRef } from "react";
+import styles from "../styles/NewMeetingForm.module.css";
 
 function NewMeetingForm(props) {
   const titleInputRef = useRef();
@@ -31,47 +32,78 @@ function NewMeetingForm(props) {
   }
 
   return (
-    <div>
-      <form onSubmit={submitHandler}>
-        <div>
+    <form onSubmit={submitHandler}>
+      <div className={styles.formContainer}>
+        <div className={styles.formGroup}>
           <label htmlFor="title">Book Title</label>
-          <input type="text" id="title" ref={titleInputRef} required />
+          <input
+            type="text"
+            id="title"
+            ref={titleInputRef}
+            className={styles.inputFields}
+            required
+          />
         </div>
 
-        <div>
+        <div className={styles.formGroup}>
           <label htmlFor="author">Author</label>
-          <input type="text" id="author" ref={authorInputRef} required />
+          <input
+            type="text"
+            id="author"
+            ref={authorInputRef}
+            className={styles.inputFields}
+            required
+          />
         </div>
 
-        <div>
+        <div className={styles.formGroup}>
           <label htmlFor="image">Image (URL)</label>
-          <input type="url" id="image" ref={imageInputRef} required />
+          <input
+            type="url"
+            id="image"
+            ref={imageInputRef}
+            className={styles.inputFields}
+            required
+          />
         </div>
 
-        <div>
+        <div className={styles.formGroup}>
           <label htmlFor="address">Meeting Address</label>
-          <input type="text" id="address" ref={addressInputRef} required />
+          <input
+            type="text"
+            id="address"
+            ref={addressInputRef}
+            className={styles.inputFields}
+            required
+          />
         </div>
 
-        <div>
+        <div className={styles.formGroup}>
           <label htmlFor="date">Date of Meeting</label>
-          <input type="date" id="date" ref={dateInputRef} required />
+          <input
+            type="date"
+            id="date"
+            ref={dateInputRef}
+            className={styles.inputFields}
+            required
+          />
         </div>
 
-        <div>
+        <div className={styles.formGroup}>
           <label htmlFor="description">Description</label>
           <textarea
             id="description"
             rows="5"
             ref={descriptionInputRef}
+            className={styles.inputFields}
             required
           ></textarea>
         </div>
         <div>
-          <button>Add Meetup</button>
+          <button className={styles.formBtn}>Add Meeting</button>
         </div>
-      </form>
-    </div>
+      </div>
+    </form>
   );
 }
 
