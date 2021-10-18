@@ -1,6 +1,9 @@
+import { useRouter } from "next/router";
 import styles from "../styles/SingleMeeting.module.css";
 
 function SingleMeeting(props) {
+  const router = useRouter();
+
   return (
     <li className={styles.container}>
       <div>
@@ -12,7 +15,16 @@ function SingleMeeting(props) {
         <p>{props.date}</p>
       </div>
       <div>
-        <button>Show Details</button>
+        <button
+          onClick={() => {
+            router.push({
+              pathname: "/meetings/[meetingId]",
+              query: { meetingId: props.id },
+            });
+          }}
+        >
+          Show Details
+        </button>
       </div>
     </li>
   );
