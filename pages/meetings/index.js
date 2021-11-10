@@ -33,13 +33,22 @@ const placeholderMeetings = [
   },
 ];
 
-const MeetingsPage = () => {
+const MeetingsPage = (props) => {
   return (
     <div className="container">
       <h1 className="pageHeading">Upcoming Meetings</h1>
-      <MeetingList meetings={placeholderMeetings} />
+      <MeetingList meetings={props.meetings} />
     </div>
   );
 };
+
+export async function getStaticProps() {
+  return {
+    props: {
+      meetings: placeholderMeetings,
+    },
+    revalidate: 60,
+  };
+}
 
 export default MeetingsPage;
