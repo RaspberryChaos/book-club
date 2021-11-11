@@ -1,4 +1,5 @@
 import MeetingList from "../../components/MeetingList.js";
+import { MongoClient } from "mongodb";
 
 const placeholderMeetings = [
   {
@@ -43,9 +44,30 @@ const MeetingsPage = (props) => {
 };
 
 export async function getStaticProps() {
+  const user = process.env.DB_USER;
+  const password = process.env.DB_PASS;
+
+  const client = await MongoClient.connect(
+    `mongodb+srv://${user}:${password}@cluster0.xaika.mongodb.net/bookClubMeetings?retryWrites=true&w=majority`
+  );
+  const db = client.db();
+  const meetingsCollection = db.collection("meetings");
+
+  const meetings = await meetingsCollection.find().toArray();
+  console.log("meetings", meetings);
+  client.close();
+
   return {
     props: {
-      meetings: placeholderMeetings,
+      meetings: meetings.map((meeting) => ({
+        title: meeting.title,
+        author: meeting.author,
+        description: meeting.description,
+        address: meeting.address,
+        date: meeting.date,
+        image: meeting.image,
+        id: meeting._id.toString(),
+      })),
     },
     revalidate: 60,
   };

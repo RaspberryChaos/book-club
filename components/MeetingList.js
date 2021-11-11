@@ -9,7 +9,7 @@ const MeetingList = (props) => {
           key={meeting.id}
           id={meeting.id}
           image={meeting.image}
-          title={meeting.bookTitle}
+          title={meeting.title}
           author={meeting.author}
           address={meeting.address}
           date={meeting.date}
