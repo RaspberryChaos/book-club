@@ -1,21 +1,33 @@
 import { MongoClient, ObjectId } from "mongodb";
+import styles from "../../styles/MeetingDetails.module.css";
 import Head from "next/head";
+import Image from "next/image";
 
-const MeetingDetails = ({ title, author, address, date, description, id }) => {
+const MeetingDetails = ({
+  title,
+  author,
+  address,
+  image,
+  date,
+  description,
+  id,
+}) => {
   return (
     <>
-    <Head>
-      <title>Book Club - {title} Meeting</title>
-    </Head>
-    <section>
-      <h1>Meeting Details Page</h1>
-      <p>{title}</p>
-      <p>{id}</p>
-      <p>{author}</p>
-      <p>{date}</p>
-      <p>{address}</p>
-      <p>{description}</p>
-    </section>
+      <Head>
+        <title>Book Club - {title} Meeting</title>
+      </Head>
+      <section className={styles.container}>
+        <h1 className="pageHeading">
+          {title} by {author}
+        </h1>
+        <div className="imageContainer">
+          <Image src={image} width={250} height={200} />
+        </div>
+        <p className={styles.details}>Meeting Date: {date}</p>
+        <p className={styles.details}>Address: {address}</p>
+        <p>Details: {description}</p>
+      </section>
     </>
   );
 };
@@ -38,7 +50,7 @@ export async function getStaticPaths() {
   client.close();
 
   return {
-    fallback: false,
+    fallback: "blocking",
     paths: meetings.map((meeting) => ({
       params: { meetingId: meeting._id.toString() },
     })),
@@ -66,6 +78,7 @@ export async function getStaticProps(context) {
       title: meeting.title,
       author: meeting.author,
       address: meeting.address,
+      image: meeting.image,
       date: meeting.date,
       description: meeting.description,
       id: meeting._id.toString(),

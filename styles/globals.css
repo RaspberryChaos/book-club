@@ -39,5 +39,5 @@ li {
 
 .container {
   background-color: var(--clr-blue);
-  min-height: 100vh;
+  min-height: 90vh;
 }

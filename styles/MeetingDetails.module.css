@@ -1,0 +1,21 @@
+.container {
+    background-color: var(--clr-blue);
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: var(--clr-light);
+    border: 1px solid green;
+    padding-top: 2rem;
+  }
+
+  .imageContainer {
+    width: 50%;
+    margin: 1rem;
+  }
+
+  .details {
+    font-size: 2rem;
+    font-family: var(--font-headings);
+    text-shadow: 2px 3px 2px rgba(0, 0, 0, 0.2);
+  }
