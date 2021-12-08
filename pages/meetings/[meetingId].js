@@ -1,7 +1,12 @@
 import { MongoClient, ObjectId } from "mongodb";
+import Head from "next/head";
 
 const MeetingDetails = ({ title, author, address, date, description, id }) => {
   return (
+    <>
+    <Head>
+      <title>Book Club - {title} Meeting</title>
+    </Head>
     <section>
       <h1>Meeting Details Page</h1>
       <p>{title}</p>
@@ -11,6 +16,7 @@ const MeetingDetails = ({ title, author, address, date, description, id }) => {
       <p>{address}</p>
       <p>{description}</p>
     </section>
+    </>
   );
 };
 

@@ -1,5 +1,6 @@
 import NewMeetingForm from "../components/NewMeetingForm";
 import { useRouter } from "next/router";
+import Head from "next/head";
 
 const AddNewMeeting = () => {
   const router = useRouter();
@@ -12,14 +13,19 @@ const AddNewMeeting = () => {
 
     const data = await response.json();
     console.log("data", data);
-    router.push("/");
+    router.push("/meetings");
   }
 
   return (
-    <div className="container">
-      <h1 className="pageHeading">Add a New Meeting</h1>
-      <NewMeetingForm onAddMeeting={handleAddMeeting} />
-    </div>
+    <>
+      <Head>
+        <title>Book Club - Add a new meeting</title>
+      </Head>
+      <div className="container">
+        <h1 className="pageHeading">Add a New Meeting</h1>
+        <NewMeetingForm onAddMeeting={handleAddMeeting} />
+      </div>
+    </>
   );
 };
 
