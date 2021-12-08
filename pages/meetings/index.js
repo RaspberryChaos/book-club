@@ -7,6 +7,7 @@ const MeetingsPage = (props) => {
     <>
     <Head>
       <title>Book Club - All Meetings</title>
+      <meta name="description" content="The list of our upcoming events"/>
     </Head>
     <div className="container">
       <h1 className="pageHeading">Upcoming Meetings</h1>

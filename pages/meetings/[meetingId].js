@@ -16,6 +16,7 @@ const MeetingDetails = ({
     <>
       <Head>
         <title>Book Club - {title} Meeting</title>
+        <meta name="description" content="Find out all the details for this book club meeting"/>
       </Head>
       <section className={styles.container}>
         <h1 className="pageHeading">

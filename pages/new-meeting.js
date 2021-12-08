@@ -20,6 +20,7 @@ const AddNewMeeting = () => {
     <>
       <Head>
         <title>Book Club - Add a new meeting</title>
+        <meta name="description" content="Know a good book that you'd like to discuss with others? Add your own meetup using this form!"/>
       </Head>
       <div className="container">
         <h1 className="pageHeading">Add a New Meeting</h1>

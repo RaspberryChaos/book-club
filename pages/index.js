@@ -7,6 +7,7 @@ export default function Home() {
     <>
     <Head>
       <title>Book Club Homepage</title>
+      <meta name="description" content="Discover our book club and find out the details of our upcoming events"/>
     </Head>
     <div className={styles.container}>
       <div className={styles.mainContent}>
