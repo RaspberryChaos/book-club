@@ -7,7 +7,16 @@ function SingleMeeting(props) {
   return (
     <li className={styles.container}>
       <div>
-        <img src={props.image} alt={props.title} width={100} />
+        <a
+          onClick={() => {
+            router.push({
+              pathname: "/meetings/[meetingId]",
+              query: { meetingId: props.id },
+            });
+          }}
+        >
+          <img src={props.image} alt={props.title} width={100} />
+        </a>
       </div>
       <div>
         <h3>{props.title}</h3>
